@@ -1,0 +1,47 @@
+/*This is for the fonts and stylings of the title, subtitle and paragraphs*/
+.headline {
+  &--vlarge {
+    font-weight: 700;
+    font-size: $large;
+    font-family: "AvenirNext LT Pro";
+    margin-top: $large;
+    @include tablet {
+      font-size: $large;
+    }
+  }
+  &--large {
+    font-weight: 600;
+    font-size: $medium;
+    font-family: "AvenirNext LT Pro";
+
+    @include tablet {
+      line-height: 44px;
+    }
+    @include desktop {
+      line-height: 34px;
+      font-size: $small;
+    }
+    &-next {
+      color: $primary-silver;
+      margin-bottom: $medium;
+    }
+  }
+  &--medium {
+    font-size: $medium;
+    line-height: 44px;
+    font-family: "AvenirNext LT Pro";
+    font-weight: 400;
+    @include desktop {
+      font-size: $small;
+    }
+  }
+  &--small {
+    font-size: $small;
+    line-height: 44px;
+  }
+  &--vsmall {
+    font-family: "AvenirNext LT Pro";
+    font-size: $vsmall;
+    line-height: 44px;
+  }
+}

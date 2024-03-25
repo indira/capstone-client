@@ -1,0 +1,49 @@
+input {
+  height: 2.5rem;
+  padding-left: 1rem;
+  border: 1px solid $cloud;
+  border-radius: 0.25rem;
+  font-family: "Titillium Web";
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  @include tablet {
+    width: 100%;
+  }
+  &:focus {
+    border-radius: 1.2rem;
+    outline: none;
+    box-shadow: 0 0 0 0.1rem $secondary-blue;
+  }
+  &::placeholder {
+    font-weight: 400;
+    color: $black;
+    font-size: 1rem;
+  }
+}
+
+label {
+  width: 100%;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+button {
+  background-color: $primary-blue;
+  color: $white;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid $primary-blue;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  margin-right: 2rem;
+  @include tablet {
+    width: 20%;
+    margin: 1rem 1rem;
+  }
+}
