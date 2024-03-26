@@ -4,18 +4,15 @@ import axios from "axios"
 function HeaderLoggedOut(props) {
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
-  const body = {
-    username,
-    password
-  }
+
   const handleSubmit = async e => {
     e.preventDefault()
-    //console.log(body)
+
     try {
-      const response = await axios.post("http://localhost:8080/login", { body })
+      const response = await axios.post("http://localhost:8080/login", { username, password })
+      console.log(response.data)
       if (response.data) {
         props.setLoggedIn(true)
-        console.log(response.data)
       } else {
         console.log("Incorrect username /password.")
       }

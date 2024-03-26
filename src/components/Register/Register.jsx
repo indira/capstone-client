@@ -4,18 +4,12 @@ const Register = () => {
   const [username, setUserName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const body = {
-    username,
-    email,
-    password
-  }
 
   const handleSubmit = async e => {
     e.preventDefault(e)
-    console.log(body)
     try {
-      const response = await axios.post("http://localhost:8080/register", body)
-      console.log(response.body)
+      const response = await axios.post("http://localhost:8080/register", { username, email, password })
+      console.log(response.data)
       console.log("Register")
     } catch (e) {
       console.log("There was in error in form submission", e)
