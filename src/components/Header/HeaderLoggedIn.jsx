@@ -1,23 +1,23 @@
 import React, { useEffect, useContext } from "react"
 import { Link } from "react-router-dom"
 const HeaderLoggedIn = props => {
+  const handleLogout = e => {
+    e.preventDefault()
+    props.setLoggedIn(false)
+    localStorage.removeItem("portfolioToken")
+    localStorage.removeItem("portfolioUsername")
+    localStorage.removeItem("portfolioAvatar")
+  }
   return (
     <>
       <div>
-        <Link to="#" className="text-white mr-2 header-search-icon">
-          <i className="fas fa-search"></i>
+        <Link to="">
+          <img className="site-header-avatar-small" src={localStorage.getItem("portfolioAvatar")} alt="avatar" />
         </Link>{" "}
-        <span className="mr-2 header-chat-icon text-white">
-          <i className="fas fa-comment"></i>
-          <span className="chat-count-badge text-white"> </span>
-        </span>{" "}
-        <Link to="" className="mr-2">
-          <img className="header-avatar-small" src="" alt="avatar" />
+        <Link to="/create-post">
+          <button className="site-header-button-green">Create Post</button>
         </Link>{" "}
-        <Link className="btn btn-sm btn-success mr-2" to="/create-post">
-          Create Post
-        </Link>{" "}
-        <button onClick={() => props.setLoggedIn(false)} className="btn btn-sm btn-secondary btn-marbot">
+        <button onClick={handleLogout} className="site-header-site-button">
           Sign Out
         </button>
       </div>

@@ -1,4 +1,5 @@
-input {
+input,
+textarea {
   height: 2.5rem;
   padding-left: 1rem;
   border: 1px solid $cloud;
@@ -9,6 +10,7 @@ input {
   margin-bottom: 1rem;
   margin-right: 2rem;
   @include tablet {
+    padding: 1.5rem;
     width: 100%;
   }
   &:focus {
@@ -21,6 +23,9 @@ input {
     color: $black;
     font-size: 1rem;
   }
+}
+textarea {
+  height: 100px;
 }
 
 label {
@@ -41,9 +46,30 @@ button {
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 4rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
+
   @include tablet {
     width: 20%;
-    margin: 1rem 1rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin: 0.5rem 0.5rem;
+  }
+}
+.button-white {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  color: black;
+  border: none;
+  font-size: $medium;
+  box-shadow: 0 0 0 0.1rem #343a40;
+  &:hover {
+    outline: none;
+    box-shadow: 0 0 0 0.1rem #343a40;
+    background-color: #343a40;
+    color: white;
+    font-weight: 500;
   }
 }

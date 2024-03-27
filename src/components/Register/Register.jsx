@@ -8,7 +8,7 @@ const Register = () => {
   const handleSubmit = async e => {
     e.preventDefault(e)
     try {
-      const response = await axios.post("http://localhost:8080/register", { username, email, password })
+      const response = await axios.post("/register", { username, email, password })
       console.log(response.data)
       console.log("Register")
     } catch (e) {
@@ -39,7 +39,9 @@ const Register = () => {
             </label>
             <input onChange={e => setPassword(e.target.value)} id="password-register" name="password" className="form-control" type="password" placeholder="Create a password" />
 
-            <button type="submit">Sign up</button>
+            <button className="button-white" type="submit">
+              Sign up
+            </button>
           </form>
         </div>
       </div>
