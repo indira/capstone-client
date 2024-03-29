@@ -12,7 +12,7 @@ const Register = () => {
       console.log(response.data)
       console.log("Register")
     } catch (e) {
-      console.log("There was in error in form submission", e)
+      console.log(e.response.data.message)
     }
   }
 

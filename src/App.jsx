@@ -6,6 +6,7 @@ import HomePage from "./Pages/HomePage/HomePage"
 import Footer from "./components/footer/Footer"
 import Home from "./components/Home/Home"
 import CreatePost from "./components/CreatePost/create-post"
+import ViewSinglePost from "./components/ViewSinglePost/ViewSinglePost"
 
 //Calling the stylesheet
 import "../src/Styles/App.scss"
@@ -19,6 +20,7 @@ function App() {
         <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <Routes>
           <Route path="/" element={loggedIn ? <Home /> : <HomePage />} />
+          <Route path="/post/:id" element={<ViewSinglePost />} />
           <Route path="/create-post" element={<CreatePost />} />
         </Routes>
         <Footer />
