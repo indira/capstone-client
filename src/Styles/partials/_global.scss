@@ -19,12 +19,12 @@ a {
   color: #d59541;
 }
 /* Error state for input fields */
-.error {
-  border-color: red !important;
+.is-invalid {
+  border: 1px solid #dc3545;
 }
 
 /* Error message styles */
-.error-message {
+.invalid-feedback {
   color: red;
   font-size: 1rem;
   margin-bottom: 0.8rem;

@@ -38,6 +38,9 @@
     padding-left: 3rem;
     padding-right: 3rem;
     padding-bottom: 3rem;
-    
+    &-success-message {
+      font-size: 1.5rem;
+      font-weight:600;
+    }
   }
 }
