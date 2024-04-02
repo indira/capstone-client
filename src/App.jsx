@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer"
 import Home from "./components/Home/Home"
 import CreatePost from "./components/CreatePost/create-post"
 import ViewSinglePost from "./components/ViewSinglePost/ViewSinglePost"
+import Profile from "./components/Profile/Profile"
 
 //Calling the stylesheet
 import "../src/Styles/App.scss"
@@ -19,6 +20,7 @@ function App() {
       <BrowserRouter>
         <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <Routes>
+          <Route path="/profile/:username/*" element={<Profile />} />
           <Route path="/" element={loggedIn ? <Home /> : <HomePage />} />
           <Route path="/post/:id" element={<ViewSinglePost />} />
           <Route path="/create-post" element={<CreatePost />} />

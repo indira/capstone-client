@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
+import Page from "../Page/Page"
 const Register = () => {
   const [username, setUserName] = useState("")
   const [email, setEmail] = useState("")
@@ -17,7 +18,7 @@ const Register = () => {
   }
 
   return (
-    <>
+    <Page title="RegisterHome">
       <div className="container">
         <div className="container__description">
           <h4 className="container__description--title">Register here!</h4>
@@ -45,7 +46,7 @@ const Register = () => {
           </form>
         </div>
       </div>
-    </>
+    </Page>
   )
 }
 
