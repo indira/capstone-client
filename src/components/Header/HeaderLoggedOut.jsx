@@ -4,31 +4,34 @@ import axios from "axios"
 function HeaderLoggedOut(props) {
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
-  const body = {
-    username,
-    password
-  }
+  const [errorMessage, setErrorMessage] = useState("")
+
   const handleSubmit = async e => {
     e.preventDefault()
-    //console.log(body)
     try {
-      const response = await axios.post("http://localhost:8080/login", { body })
+      const response = await axios.post("/login", { username, password })
+      console.log(response.data)
       if (response.data) {
+        localStorage.setItem("portfolioToken", response.data.token)
+        localStorage.setItem("portfolioUsername", response.data.username)
+        localStorage.setItem("portfolioAvatar", response.data.avatar)
         props.setLoggedIn(true)
-        console.log(response.data)
       } else {
         console.log("Incorrect username /password.")
       }
     } catch (e) {
-      console.log("Something went wrong in login", e)
+      setErrorMessage(e.response.data.message)
     }
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <input onChange={e => setUsername(e.target.value)} name="username" type="text" placeholder="Username" autoComplete="off" />
-      <input onChange={e => setPassword(e.target.value)} name="password" type="password" placeholder="Password" />
-      <button>Sign In</button>
-    </form>
+    <div>
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      <form onSubmit={handleSubmit}>
+        <input autoFocus onChange={e => setUsername(e.target.value)} name="username" type="text" placeholder="Username" autoComplete="off" />
+        <input onChange={e => setPassword(e.target.value)} name="password" type="password" placeholder="Password" />
+        <button>Sign In</button>
+      </form>
+    </div>
   )
 }
 
