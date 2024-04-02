@@ -37,10 +37,13 @@
     display: flex;
     padding: 2rem;
     background-color: #f0f0f0;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: 0.1px solid $cloud;
     position: relative;
     &-link {
-      font-size: 1rem;
+      margin-right: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
       color: $secondary-black;
       @include tablet {
         font-size: 1.5rem;
