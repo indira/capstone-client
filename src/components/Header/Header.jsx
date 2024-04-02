@@ -7,7 +7,7 @@ const Header = props => {
       <div className="wrapper">
         <div className="site-header">
           <div className="site-header__logo">
-            <Link to="/">Indira's Portfolio</Link>
+            <Link to="/">Innovation Hub</Link>
           </div>
           <div className="site-header__elements">{props.loggedIn ? <HeaderLoggedIn setLoggedIn={props.setLoggedIn} /> : <HeaderLoggedOut setLoggedIn={props.setLoggedIn} />}</div>
         </div>
