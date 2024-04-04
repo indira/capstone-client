@@ -38,13 +38,15 @@ function ViewSinglePost() {
     <Page title={post.title}>
       <div className="wrapper wrapper__border">
         <div className="container-home ">
-          <div className="profile-container__posts-actions">
-            <Link onClick={deleteHandler} className="delete">
-              <i className="fas fa-trash-alt"></i>
-            </Link>
+          <div className="VSinglePost-container">
+            <div className="VSinglePost-container__header ">
+              <h2>{post.title}</h2>
+              <Link onClick={deleteHandler}>
+                <i className="fas fa-trash-alt delete"></i>
+              </Link>
+            </div>
+            <div className="VSinglePost-container__body">{post.body}</div>
           </div>
-          <h2 className="container-home__header">{post.title}</h2>
-          <div className="container-home__body">{post.body}</div>
         </div>
       </div>
     </Page>
