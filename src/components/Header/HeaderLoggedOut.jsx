@@ -25,7 +25,7 @@ function HeaderLoggedOut(props) {
   }
   return (
     <div>
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {errorMessage && <div className="invalid-feedback">{errorMessage}</div>}
       <form onSubmit={handleSubmit}>
         <input autoFocus onChange={e => setUsername(e.target.value)} name="username" type="text" placeholder="Username" autoComplete="off" />
         <input onChange={e => setPassword(e.target.value)} name="password" type="password" placeholder="Password" />

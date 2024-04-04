@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import Page from "../Page/Page"
 import axios from "axios"
 import { useParams, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 function ViewSinglePost() {
   const navigate = useNavigate()
@@ -18,14 +19,14 @@ function ViewSinglePost() {
       }
     }
     fetchPost()
-  }, [])
+  }, [id])
 
   async function deleteHandler() {
     const areYouSure = window.confirm("Do you really want to delete this post?")
     if (areYouSure) {
       try {
         const response = await axios.delete(`/post/${id}`, { data: { token: localStorage.getItem("portfolioToken") } })
-        if (response.data == "Success") {
+        if (response.data === "Success") {
           navigate(`/profile/${localStorage.getItem("portfolioUsername")}`)
         }
       } catch (e) {
@@ -38,9 +39,9 @@ function ViewSinglePost() {
       <div className="wrapper wrapper__border">
         <div className="container-home ">
           <div className="profile-container__posts-actions">
-            <a onClick={deleteHandler} className="delete">
+            <Link onClick={deleteHandler} className="delete">
               <i className="fas fa-trash-alt"></i>
-            </a>
+            </Link>
           </div>
           <h2 className="container-home__header">{post.title}</h2>
           <div className="container-home__body">{post.body}</div>

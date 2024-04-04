@@ -8,6 +8,7 @@ const Register = () => {
   const [password, setPassword] = useState("")
   const [errors, setErrors] = useState({})
   const [registrationSuccess, setRegistrationSuccess] = useState(false)
+  const [registrationError, setRegistrationError] = useState(" ")
 
   const validateForm = () => {
     const errors = {}
@@ -47,7 +48,7 @@ const Register = () => {
           setRegistrationSuccess(true)
         }
       } catch (e) {
-        console.log(e.response.data.message)
+        setRegistrationError(e.response.data.message)
       }
     }
   }
@@ -61,6 +62,7 @@ const Register = () => {
         </div>
         <div className="container__form">
           {registrationSuccess && <div className="container__form-success-message">Registration successful!</div>}
+          {registrationError && <div className="invalid-feedback">{registrationError}</div>}
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="username-register">
