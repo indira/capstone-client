@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import Page from "../Page/Page"
 import axios from "axios"
 import { useParams, useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
+import StateContext from "../../StateContext"
 
 function ViewSinglePost() {
+  const appState = useContext(StateContext)
   const navigate = useNavigate()
   const { id } = useParams()
   const [post, setPost] = useState("")
@@ -25,9 +27,9 @@ function ViewSinglePost() {
     const areYouSure = window.confirm("Do you really want to delete this post?")
     if (areYouSure) {
       try {
-        const response = await axios.delete(`/post/${id}`, { data: { token: localStorage.getItem("portfolioToken") } })
+        const response = await axios.delete(`/post/${id}`, { data: { token: appState.user.token } })
         if (response.data === "Success") {
-          navigate(`/profile/${localStorage.getItem("portfolioUsername")}`)
+          navigate(`/profile/${appState.user.username}`)
         }
       } catch (e) {
         console.log(e)

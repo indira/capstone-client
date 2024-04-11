@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import Page from "../Page/Page"
 import Axios from "axios"
 import { useParams } from "react-router-dom"
 import ProfilePosts from "./ProfilePosts"
+import StateContext from "../../StateContext"
 
 function Profile() {
+  const appState = useContext(StateContext)
   const { username } = useParams()
   const [profileData, setProfileData] = useState({
     profileUsername: "...",
@@ -14,7 +16,7 @@ function Profile() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await Axios.get(`/profile/${username}`, { token: localStorage.getItem("portfolioToken") })
+        const response = await Axios.get(`/profile/${username}`, { token: appState.user.token })
         setProfileData(response.data)
       } catch (e) {
         console.log("Sorry, something went wrong in profile.")

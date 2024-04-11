@@ -1,14 +1,18 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import Page from "../Page/Page"
+import DispatchContext from "../../DispatchContext"
+import StateContext from "../../StateContext"
 
-function CreatePost() {
+function CreatePost(props) {
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
+  const appDispatch = useContext(DispatchContext)
+  const appState = useContext(StateContext)
+
   const [error, setError] = useState("")
   const navigate = useNavigate()
-  const token = localStorage.getItem("portfolioToken")
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -22,11 +26,11 @@ function CreatePost() {
       const response = await axios.post("/create-post", {
         title,
         body,
-        token: token
+        token: appState.user.token
       })
-
       if (response.data) {
-        navigate(`/profile/${localStorage.getItem("portfolioUsername")}`)
+        appDispatch({ type: "flashMessage", value: "Congratulations, you successfully created a post." })
+        navigate(`/profile/${appState.user.username}`)
       }
     } catch (error) {
       setError("Something went wrong while creating post.")
@@ -38,7 +42,7 @@ function CreatePost() {
     <Page title="Create New Post">
       <div className="wrapper wrapper__border">
         <div className="container-home ">
-          {token ? (
+          {appState.user.token ? (
             <>
               <h2 className="container-home__title">Create new post.</h2>
               <form onSubmit={handleSubmit}>

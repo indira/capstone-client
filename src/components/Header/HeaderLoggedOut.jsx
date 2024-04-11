@@ -1,7 +1,9 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import axios from "axios"
+import DispatchContext from "../../DispatchContext"
 
 function HeaderLoggedOut(props) {
+  const appDispatch = useContext(DispatchContext)
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
   const [errorMessage, setErrorMessage] = useState("")
@@ -12,10 +14,7 @@ function HeaderLoggedOut(props) {
       const response = await axios.post("/login", { username, password })
       console.log(response.data)
       if (response.data) {
-        localStorage.setItem("portfolioToken", response.data.token)
-        localStorage.setItem("portfolioUsername", response.data.username)
-        localStorage.setItem("portfolioAvatar", response.data.avatar)
-        props.setLoggedIn(true)
+        appDispatch({ type: "login", data: response.data })
       } else {
         console.log("Incorrect username /password.")
       }
