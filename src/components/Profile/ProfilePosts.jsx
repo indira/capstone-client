@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import axios from "axios"
 import { useParams, Link } from "react-router-dom"
+import StateContext from "../../StateContext"
 
 function ProfilePosts() {
   const { username } = useParams()
   const [isLoading, setIsLoading] = useState(true)
   const [posts, setPosts] = useState([])
+  const appState = useContext(StateContext)
 
   useEffect(() => {
     async function fetchPosts() {
       try {
         const response = await axios.get(`/profile/${username}/posts`)
-        console.log(response.data)
         setPosts(response.data)
         setIsLoading(false)
       } catch (e) {
@@ -30,6 +31,7 @@ function ProfilePosts() {
         const dateFormatted = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
         return (
           <div className="profile-container__posts" key={post.id}>
+            <img className="profile-container__header-avatar" src={post.user_avatar} alt="avatar" />
             <Link to={`/post/${post.id}`}>
               <div className="profile-container__posts-link">{post.title}</div>
             </Link>

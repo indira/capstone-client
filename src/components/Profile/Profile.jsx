@@ -23,7 +23,7 @@ function Profile() {
       }
     }
     fetchData()
-  }, [username])
+  }, [appState.user.token, username])
 
   return (
     <Page title="Profile Screen">

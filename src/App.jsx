@@ -12,6 +12,7 @@ import ViewSinglePost from "./components/ViewSinglePost/ViewSinglePost"
 import Profile from "./components/Profile/Profile"
 import StateContext from "./StateContext"
 import DispatchContext from "./DispatchContext"
+import EditPost from "./components/EditPost/EditPost"
 
 //Calling the stylesheet
 import "../src/Styles/App.scss"
@@ -22,9 +23,9 @@ function App() {
     loggedIn: Boolean(localStorage.getItem("portfolioToken")),
     flashMessages: [],
     user: {
-      token: localStorage.getItem("IndiraSOFTToken"),
-      username: localStorage.getItem("IndiraSOFTUsername"),
-      avatar: localStorage.getItem("IndiraSOFTAvatar")
+      token: localStorage.getItem("portfolioToken"),
+      username: localStorage.getItem("portfolioUsername"),
+      avatar: localStorage.getItem("portfolioAvatar")
     }
   }
 
@@ -48,13 +49,13 @@ function App() {
   const [state, dispatch] = useImmerReducer(ourReducer, initialState)
   useEffect(() => {
     if (state.loggedIn) {
-      localStorage.setItem("IndiraSOFTToken", state.user.token)
-      localStorage.setItem("IndiraSOFTUsername", state.user.username)
-      localStorage.setItem("IndiraSOFTAvatar", state.user.avatar)
+      localStorage.setItem("portfolioToken", state.user.token)
+      localStorage.setItem("portfolioUsername", state.user.username)
+      localStorage.setItem("portfolioAvatar", state.user.avatar)
     } else {
-      localStorage.removeItem("IndiraSOFTToken")
-      localStorage.removeItem("IndiraSOFTUsername")
-      localStorage.removeItem("IndiraSOFTAvatar")
+      localStorage.removeItem("portfolioToken")
+      localStorage.removeItem("portfolioUsername")
+      localStorage.removeItem("portfolioAvatar")
     }
   }, [state.loggedIn])
 
@@ -67,9 +68,10 @@ function App() {
             <Header />
             <Routes>
               <Route path="/" element={state.loggedIn ? <Home /> : <HomePage />} />
-              <Route path="/post/:id" element={<ViewSinglePost />} />
               <Route path="/create-post" element={<CreatePost />} />
               <Route path="/profile/:username/*" element={<Profile />} />
+              <Route path="/post/:id" element={<ViewSinglePost />} />
+              <Route path="/post/:id/edit" element={<EditPost />} />
             </Routes>
             <Footer />
           </BrowserRouter>
