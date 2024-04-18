@@ -1,13 +1,11 @@
-import React, { useEffect, useState, useContext } from "react"
+import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { useParams, Link } from "react-router-dom"
-import StateContext from "../../StateContext"
 
 function ProfilePosts() {
   const { username } = useParams()
   const [isLoading, setIsLoading] = useState(true)
   const [posts, setPosts] = useState([])
-  const appState = useContext(StateContext)
 
   useEffect(() => {
     async function fetchPosts() {
