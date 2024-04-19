@@ -38,7 +38,7 @@ function EditPost() {
     return () => {
       ourRequest.cancel()
     }
-  }, [id])
+  }, [id, appDispatch, appState.user.username, navigate])
 
   const handleInputChange = event => {
     const { name, value } = event.target
