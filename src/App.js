@@ -57,7 +57,7 @@ function App() {
       localStorage.removeItem("portfolioUsername")
       localStorage.removeItem("portfolioAvatar")
     }
-  }, [state.loggedIn])
+  }, [state.loggedIn, state.user.token, state.user.username, state.user.avatar])
 
   return (
     <>
