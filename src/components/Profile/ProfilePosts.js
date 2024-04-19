@@ -11,7 +11,6 @@ function ProfilePosts() {
     async function fetchPosts() {
       try {
         const response = await axios.get(`/profile/${username}/posts`)
-        console.log(response.data)
         setPosts(response.data)
         setIsLoading(false)
       } catch (e) {
@@ -30,6 +29,7 @@ function ProfilePosts() {
         const dateFormatted = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
         return (
           <div className="profile-container__posts" key={post.id}>
+            <img className="profile-container__header-avatar" src={post.user_avatar} alt="avatar" />
             <Link to={`/post/${post.id}`}>
               <div className="profile-container__posts-link">{post.title}</div>
             </Link>

@@ -1,21 +1,23 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
+import DispatchContext from "../../DispatchContext"
+import StateContext from "../../StateContext"
+
 const HeaderLoggedIn = props => {
   const navigate = useNavigate()
+  const appDispatch = useContext(DispatchContext)
+  const appState = useContext(StateContext)
   const handleLogout = e => {
     e.preventDefault()
-    props.setLoggedIn(false)
-    localStorage.removeItem("portfolioToken")
-    localStorage.removeItem("portfolioUsername")
-    localStorage.removeItem("portfolioAvatar")
+    appDispatch({ type: "logout" })
     navigate(`/`)
   }
   return (
     <>
       <div>
-        <Link to={`/profile/${localStorage.getItem("portfolioUsername")}`}>
-          <img className="site-header-avatar-small" src={localStorage.getItem("portfolioAvatar")} alt="avatar" />
+        <Link to={`/profile/${appState.user.username}`}>
+          <img className="site-header-avatar-small" src={appState.user.avatar} alt="avatar" />
         </Link>{" "}
         <Link to="/create-post">
           <button className="site-header-button-green">Create Post</button>

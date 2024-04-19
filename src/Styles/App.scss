@@ -1,7 +1,6 @@
 /*Importing all the styles in main.scss file and importing the main.css file to the index.js file to organize the styling*/
 @import "normalize.css";
 @import "./partials/variables";
-@import "./partials/fonts";
 @import "./partials/mixins";
 @import "./partials/global";
 @import "./partials/wrapper";
@@ -12,3 +11,5 @@
 @import "../../src/components/Register/Register.scss";
 @import "../../src/components/Home/Home.scss";
 @import "../../src/components/Profile/Profile.scss";
+@import "../../src/components/ViewSinglePost/ViewSinglePost.scss";
+@import "../../src/components/FlashMessages/flashMessages";
