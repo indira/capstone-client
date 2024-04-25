@@ -16,7 +16,8 @@ import EditPost from "./components/EditPost/EditPost"
 
 //Calling the stylesheet
 import "../src/Styles/App.scss"
-Axios.defaults.baseURL = "http://localhost:8080"
+//Axios.defaults.baseURL = "http://localhost:8080"
+Axios.defaults.baseURL = "https://innovationhub-29c6147b54b8.herokuapp.com/"
 
 function App() {
   const initialState = {
