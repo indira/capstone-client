@@ -17,12 +17,12 @@ const HeaderLoggedIn = props => {
     <>
       <div>
         <Link to={`/profile/${appState.user.username}`}>
-          <img className="site-header-avatar-small" src={appState.user.avatar} alt="avatar" />
+          <img className="headline-avatar-large" src={appState.user.avatar} alt="avatar" />
         </Link>{" "}
         <Link to="/create-post">
-          <button className="site-header-button-green">Create Post</button>
+          <button className="button button--green">Create Post</button>
         </Link>{" "}
-        <button onClick={handleLogout} className="site-header-site-button">
+        <button onClick={handleLogout} className="button button--blue">
           Sign Out
         </button>
       </div>

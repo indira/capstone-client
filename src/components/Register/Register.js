@@ -56,11 +56,11 @@ const Register = () => {
   return (
     <Page title="RegisterHome">
       <div className="container">
-        <div className="container__description">
-          <h4 className="container__description--title">Register here!</h4>
-          <p className="container__description--paragraph">"Welcome to this hub designed for like-minded individuals. Let's come together to share our knowledge and learn from one another."</p>
+        <div className="container__left">
+          <h4 className="container__left--title">Register here!</h4>
+          <p className="container__left--paragraph">"Register here to become a member and share your thoughts and ideas on the app."</p>
         </div>
-        <div className="container__form">
+        <div className="container__right">
           {registrationSuccess && <div className="container__form-success-message">Registration successful!</div>}
           {registrationError && <div className="invalid-feedback">{registrationError}</div>}
           <form onSubmit={handleSubmit}>
@@ -87,7 +87,7 @@ const Register = () => {
               {errors.password && <div className="invalid-feedback">{errors.password}</div>}
             </div>
 
-            <button className="button-white" type="submit">
+            <button className="button button--white" type="submit">
               Sign up
             </button>
           </form>

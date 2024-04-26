@@ -12,7 +12,6 @@ function HeaderLoggedOut(props) {
     e.preventDefault()
     try {
       const response = await axios.post("/login", { username, password })
-      console.log(response.data)
       if (response.data) {
         appDispatch({ type: "login", data: response.data })
       } else {
@@ -28,7 +27,7 @@ function HeaderLoggedOut(props) {
       <form onSubmit={handleSubmit}>
         <input autoFocus onChange={e => setUsername(e.target.value)} name="username" type="text" placeholder="Username" autoComplete="off" />
         <input onChange={e => setPassword(e.target.value)} name="password" type="password" placeholder="Password" />
-        <button>Sign In</button>
+        <button className="button button--blue button--blue-front">Sign In</button>
       </form>
     </div>
   )

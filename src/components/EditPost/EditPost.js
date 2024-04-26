@@ -70,15 +70,15 @@ function EditPost() {
   return (
     <Page title="Edit Post">
       <div className="wrapper wrapper__border">
-        <div className="container-home ">
+        <div className="container__home">
           <>
-            <h2 className="container-home__title">Edit post</h2>
+            <h2 className="headline--large">Edit post</h2>
             <form onSubmit={handleSubmit}>
               <label htmlFor="post-title">Title</label>
               <input onChange={handleInputChange} value={post.title} autoFocus name="title" id="post-title" type="text" placeholder="" autoComplete="off" />
               <label htmlFor="post-body">Body Content</label>
               <textarea onChange={handleInputChange} value={post.body} name="body" id="post-body" type="text" />
-              <button className="button-white">Save Updates</button>
+              <button className="button button--white">Save Updates</button>
             </form>
           </>
         </div>
