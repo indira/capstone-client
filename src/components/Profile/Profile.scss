@@ -24,20 +24,14 @@
       display: flex;
       padding-left: 2rem;
     }
-    &-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 16px;
-      margin-right: 5px;
-      position: relative;
-      top: 0.6rem;
-      margin-right: 1rem;
+    &-no {
+      color: $green;
     }
   }
   &__posts {
     display: flex;
     padding: 2rem;
-    background-color: #f0f0f0;
+    background-color: $secondary-alabaster;
     border-radius: 10px;
     border: 0.1px solid $cloud;
     position: relative;
@@ -46,7 +40,6 @@
       margin-right: 1rem;
       font-size: 1.2rem;
       font-weight: 600;
-      color: $secondary-black;
       @include tablet {
         font-size: 1.5rem;
       }
@@ -62,7 +55,7 @@
         color: $secondary-blue; // blue color
       }
       .delete {
-        color: #dc3545; // red color
+        color: $red; // red color
       }
     }
   }

@@ -63,39 +63,37 @@ function ViewSinglePost() {
   return (
     <Page title={post.title}>
       <div className="wrapper wrapper__border">
-        <div className="container-home ">
-          <div className="VSinglePost-container">
-            <div className="VSinglePost-container__header ">
-              <h2>{post.title}</h2>
-              <div>
-                {isOwner() && (
-                  <React.Fragment>
-                    <Link to={`/post/${post.id}/edit`} data-tooltip-content="Edit" data-tooltip-id="edit">
-                      <i className="fas fa-edit"></i>{" "}
-                    </Link>
-                    <Link data-tooltip-content="Delete" data-tooltip-id="delete" onClick={deleteHandler}>
-                      {" "}
-                      <i className="fas fa-trash-alt delete"></i>
-                    </Link>
-                    <ReactTooltip id="edit" />
-                    <ReactTooltip id="delete" />
-                  </React.Fragment>
-                )}
-              </div>
+        <div className="container__home">
+          <div className="VSinglePost-container__header ">
+            <h2 className="headline--large">{post.title}</h2>
+            <div>
+              {isOwner() && (
+                <React.Fragment>
+                  <Link to={`/post/${post.id}/edit`} data-tooltip-content="Edit" data-tooltip-id="edit">
+                    <i className="fas fa-edit"></i>{" "}
+                  </Link>
+                  <Link data-tooltip-content="Delete" data-tooltip-id="delete" onClick={deleteHandler}>
+                    {" "}
+                    <i className="fas fa-trash-alt delete"></i>
+                  </Link>
+                  <ReactTooltip id="edit" />
+                  <ReactTooltip id="delete" />
+                </React.Fragment>
+              )}
             </div>
-            <div className="VSinglePost-container__info">
-              <Link to={`/profile/${post.username}`}>
-                <img className="VSinglePost-container__info-avatar" src={post.avatar} alt="avatar" />
-              </Link>
-              Posted by{" "}
-              <Link to={`/profile/${post.username}`}>
-                <strong>{post.username}</strong>
-              </Link>{" "}
-              on {dateFormatted}
-            </div>
-            <div className="VSinglePost-container__body">
-              <ReactMarkdown children={post.body} allowedElements={["p", "strong", "em", "a", "h1", "h2", "h3", "h4", "h5", "h6", "ul", "ol", "li"]} />
-            </div>
+          </div>
+          <div className="VSinglePost-container__info">
+            <Link to={`/profile/${post.username}`}>
+              <img className="headline-avatar" src={post.avatar} alt="avatar" />
+            </Link>
+            Posted by{" "}
+            <Link to={`/profile/${post.username}`}>
+              <strong>{post.username}</strong>
+            </Link>{" "}
+            on {dateFormatted}
+          </div>
+          <div className="VSinglePost-container__body">
+            <ReactMarkdown children={post.body} allowedElements={["p", "strong", "em", "a", "h1", "h2", "h3", "h4", "h5", "h6", "ul", "ol", "li"]} />
           </div>
         </div>
       </div>

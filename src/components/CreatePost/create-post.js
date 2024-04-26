@@ -41,17 +41,17 @@ function CreatePost(props) {
   return (
     <Page title="Create New Post">
       <div className="wrapper wrapper__border">
-        <div className="container-home ">
+        <div className="container__home ">
           {appState.user.token ? (
             <>
-              <h2 className="container-home__title">Create new post.</h2>
+              <h2 className="headline--large">Create new post.</h2>
               <form onSubmit={handleSubmit}>
                 <label htmlFor="post-title">Title</label>
                 <input onChange={e => setTitle(e.target.value)} autoFocus name="title" id="post-title" type="text" placeholder="" autoComplete="off" />
                 <label htmlFor="post-body">Body Content</label>
                 <textarea onChange={e => setBody(e.target.value)} name="body" id="post-body" type="text"></textarea>
                 {error && <div className="invalid-feedback">{error}</div>}
-                <button className="button-white">Save New Post</button>
+                <button className="button button--white">Save New Post</button>
               </form>
             </>
           ) : (

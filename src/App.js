@@ -6,16 +6,20 @@ import Header from "./components/Header/Header"
 import HomePage from "./Pages/HomePage/HomePage"
 import { useImmerReducer } from "use-immer"
 import Footer from "./components/footer/Footer"
-import Home from "./components/Home/Home"
 import CreatePost from "./components/CreatePost/create-post"
 import ViewSinglePost from "./components/ViewSinglePost/ViewSinglePost"
 import Profile from "./components/Profile/Profile"
 import StateContext from "./StateContext"
 import DispatchContext from "./DispatchContext"
 import EditPost from "./components/EditPost/EditPost"
+import AboutMe from "./components/AboutMe/AboutMe"
+import Home from "./components/Home/HomeGuest"
+import Register from "./components/Register/Register"
+import Portfolio from "./components/Portfolio/Portfolio"
 
 //Calling the stylesheet
 import "../src/Styles/App.scss"
+
 //Axios.defaults.baseURL = "http://localhost:8080"
 Axios.defaults.baseURL = "https://innovationhub-29c6147b54b8.herokuapp.com/"
 
@@ -73,6 +77,9 @@ function App() {
               <Route path="/profile/:username/*" element={<Profile />} />
               <Route path="/post/:id" element={<ViewSinglePost />} />
               <Route path="/post/:id/edit" element={<EditPost />} />
+              <Route path="/aboutme" element={<AboutMe />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/portfolio" element={<Portfolio />} />
             </Routes>
             <Footer />
           </BrowserRouter>

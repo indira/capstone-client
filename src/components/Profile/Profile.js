@@ -31,10 +31,10 @@ function Profile() {
         <div className="profile-container">
           <div className="profile-container__header">
             <h2 className="">
-              <img className="profile-container__header-avatar" src={profileData.profileAvatar} alt="avatar" />
+              <img className="headline-avatar" src={profileData.profileAvatar} alt="avatar" />
               {profileData.profileUsername}
             </h2>
-            <div>No of posts: {profileData.counts.postCount}</div>
+            <div >No of posts: <span className="profile-container__header-no">{profileData.counts.postCount}</span></div>
           </div>
           <ProfilePosts />
         </div>

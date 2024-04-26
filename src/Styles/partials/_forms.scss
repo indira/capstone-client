@@ -5,6 +5,7 @@ textarea {
   border: 1px solid $cloud;
   border-radius: 0.25rem;
   font-family: "Titillium Web";
+  font-size: 1.5rem;
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -20,12 +21,12 @@ textarea {
   }
   &::placeholder {
     font-weight: 400;
-    color: $black;
+    color: $secondary-black;
     font-size: 1rem;
   }
 }
 textarea {
-  height: 100px;
+  height: 150px;
 }
 
 label {
@@ -35,41 +36,99 @@ label {
   font-weight: 600;
 }
 
-button {
-  background-color: $primary-blue;
-  color: $white;
-  padding: 0.8rem 1.2rem;
-  border: 1px solid $primary-blue;
+.button {
+  padding: 0.8rem;
   cursor: pointer;
   font-weight: 600;
-  font-size: 1rem;
-  width: 100%;
+  font-size: 0.8rem;
   margin-top: 1rem;
   margin-bottom: 4rem;
   margin-right: 1rem;
-
+  border: none;
   @include tablet {
-    width: 20%;
     font-size: 1.2rem;
     padding: 1rem;
     margin: 0.5rem 0.5rem;
   }
-}
-.button-white {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: transparent;
-  padding: 1rem 2rem;
-  color: black;
-  border: none;
-  font-size: $medium;
-  box-shadow: 0 0 0 0.1rem #343a40;
+
+  &--blue {
+    background-color: $primary-blue;
+    color: $primary-white;
+    width: 30%;
+    @include tablet {
+      width: 20%;
+    }
+    &-front {
+      width: 100%;
+      @include tablet {
+        width: 20%;
+      }
+    }
+  }
+  &--green {
+    color: #fff;
+    background-color: $green;
+    border-color: $green;
+    width: 35%;
+    @include tablet {
+      font-size: 1.2rem;
+      width: 30%;
+      margin: 0.5rem 0.5rem;
+    }
+    @include desktop {
+      padding: 1rem;
+    }
+  }
+  &--white {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    padding: 1rem 2rem;
+    color: black;
+    border: none;
+    font-size: $medium;
+    box-shadow: 0 0 0 0.1rem #343a40;
+    &-small {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      &-top {
+        margin-bottom: 0rem;
+      }
+      @include tablet {
+        margin-top: 3rem;
+        margin-right: 0.8rem;
+        width: 45%;
+      }
+      a {
+        color: black;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+  &-site-button {
+    width: 30%;
+    font-size: 0.7rem;
+    margin-bottom: 3rem;
+    padding: 0.7rem;
+    @include tablet {
+      padding: 0.8rem;
+      font-size: 1.2rem;
+      width: 30%;
+      margin: 0.5rem 0.5rem;
+    }
+    @include desktop {
+      padding: 1rem;
+    }
+  }
   &:hover {
     outline: none;
     box-shadow: 0 0 0 0.1rem #343a40;
     background-color: #343a40;
-    color: white;
+    color: white !important;
     font-weight: 500;
+    border: none;
   }
 }

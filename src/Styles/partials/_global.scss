@@ -10,17 +10,23 @@ html {
 body {
   font-family: "AvenirNext LT Pro", "Open Sans", sans-serif;
 }
-img {
-  width: 100%;
-  height: 100%;
-}
 a {
   text-decoration: none;
-  color: #d59541;
+  color: $orange;
+}
+p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 0 0 0.8rem 0;
+  @include tablet {
+    line-height: 1.5;
+    margin: 0 0 0.5rem 0;
+  }
 }
 /* Error state for input fields */
 .is-invalid {
-  border: 1px solid #dc3545;
+  border: 1px solid red;
 }
 
 /* Error message styles */
@@ -38,4 +44,8 @@ a {
 }
 .delete {
   color: red;
+}
+hr {
+  border-bottom: 2px solid $secondary-black;
+  margin: 1rem 0;
 }

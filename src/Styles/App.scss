@@ -5,11 +5,10 @@
 @import "./partials/global";
 @import "./partials/wrapper";
 @import "./partials/headline";
-@import "../../src/components/Header/Header.scss";
+@import "../../src/components/Header/Header";
 @import "./partials/forms";
-@import "../../src/components/footer/Footer.scss";
-@import "../../src/components/Register/Register.scss";
-@import "../../src/components/Home/Home.scss";
-@import "../../src/components/Profile/Profile.scss";
-@import "../../src/components/ViewSinglePost/ViewSinglePost.scss";
+@import "./partials/container";
+@import "../../src/components/footer/Footer";
+@import "../../src/components/Profile/Profile";
+@import "../../src/components/ViewSinglePost/ViewSinglePost";
 @import "../../src/components/FlashMessages/flashMessages";
