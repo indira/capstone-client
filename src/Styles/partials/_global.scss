@@ -15,12 +15,11 @@ a {
   color: $orange;
 }
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.9;
   margin: 0 0 0.8rem 0;
   @include tablet {
-    line-height: 1.5;
     margin: 0 0 0.5rem 0;
   }
 }
