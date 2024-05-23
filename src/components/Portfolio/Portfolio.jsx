@@ -20,16 +20,16 @@ function Portfolio() {
             </h3>
             <hr></hr>
             <h3 className="headline--large"> P R O F I L E</h3>
-            <p>Detail-oriented software engineer with expertise in interactive web applications and backend systems. Proficient in leveraging WordPress for dynamic content management, coupled with extensive skills in PHP, MySQL, and RESTful API integration. Well-versed in front-end technologies including React, JavaScript, HTML, CSS, Sass, Bootstrap, and Webpack, ensuring seamless user experiences. Skilled in fostering collaborative development environments via GitHub</p>
+            <p>Detail-oriented software engineer with expertise in interactive web applications and backend systems. Proficient in leveraging WordPress for dynamic content management, coupled with extensive skills in PHP, MySQL, and RESTful API integration. Well-versed in front-end technologies including React, JavaScript, HTML, CSS, SCSS, Bootstrap, and Webpack, ensuring seamless user experiences. Skilled in fostering collaborative development environments via GitHub</p>
             <hr></hr>
             <h3 className="headline--large"> S K I L L S</h3>
             <span className="headline--medium">
               <strong>Proficient in:</strong>
             </span>
-            <p> PHP, React, JavaScript, HTML, CSS/SASS, MySQL, Node.js, REST APIs, Express.js, WordPress CMS, Git, and Agile Development.</p>
+            <p> PHP, React, JavaScript, HTML, CSS/SCSS, MySQL, Node.js, REST APIs, Express.js, WordPress CMS, Git, and Agile Development.</p>
             <hr></hr>
             <h3 className="headline--large">E D U C A T I O N</h3>
-            <h3 className="headline--medium"> BrainStation | Diploma, Software Engineering </h3>
+            <h3 className="headline--medium"> BrainStation | Diploma, Web Development </h3>
             <h5 className="headline--muted">JAN 2024 - APR 2024, VANCOUVER, BC</h5>
             <h3 className="headline--medium"> Master’s Degree in Information Technology | Kobe University </h3>
             <h5 className="headline--muted">APR 2007 – APR 2009 (Rotary Yoneyama Memorial Foundation Fellow)</h5>
@@ -157,7 +157,7 @@ function Portfolio() {
                 Login System/Portfolio
               </a>
             </h3>
-            <h5 className="headline--muted">MAR 2024, Capstone Project | React, HTML, Sass, Node JS, Express, MySQL</h5>
+            <h5 className="headline--muted">MAR 2024, Capstone Project | React, HTML, SCSS, Node JS, Express, MySQL</h5>
 
             <ul>
               <li>
